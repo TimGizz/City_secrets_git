@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <title>attractions</title>
+    </head>
+    <body>
+        
+        <!-- <input type="text" class="filte_search__filter__btn" name="" id="searchInput"oninput="filterItems()"> -->
+    <section class="header">
+        <div class="container">
+            <div class="header__main">
+                    <a href="http://127.0.0.1:5500/index.html"><img src="./assets/img/пс2.svg" alt="logo"></a>
+                <div class="header__links">
+                    <button class="header__btn" id="menu_icon">
+                        <img class="header__menu" src="./assets/img/icons8-menu 1.svg" alt="menu">
+                    </button>
+                    <a class="header__link" href="http://127.0.0.1:5500/contacts.html">контакты</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="menu__plank">
+                
+                <p class="menu__link"><a  class="menu__links" href="http://127.0.0.1:5500/contacts.html">Контакты</a></p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="filte_search">
+        <div class="container">
+            <div class="filte_search__main">
+                <div class="filte_search__filter">
+                    <button id="btn" class="filte_search__filter__btn">
+                        <div id="btn" class="filte_search__filter__text"> 
+                            Без фильтра
+                        </div>
+                        <img id="btn" class="filte_search__filter__img" src="./assets/img/down.svg" alt="">
+                    </button>
+                    <div class="all__btn">
+                        <p><button onclick="filterByCategory('park')" class="all__btn__btns"><div class="filte_search__filter__texts">парки</div></button></p>
+                        <p><button onclick="filterByCategory('museums')" class="all__btn__btns"><div class="filte_search__filter__texts">музеи</div></button></p>
+                        <p><button onclick="filterByCategory('cathedrals')" class="all__btn__btns"><div class="filte_search__filter__texts">соборы</div></button></p>
+                        <p><button onclick="filterByCategory('monuments')" class="all__btn__btns"><div class="filte_search__filter__texts">памятники</div></button></p>
+                        <p><button onclick="filterByCategory('all')" class="all__btn__btns"><div class="filte_search__filter__texts">Без фильтра</div></button></p>
+                    </div>
+                </div>
+                <form action="">
+                    <div class="filte_search__search">
+                        <input id="searchInput" class="filte_search__search__input" type="search" placeholder="Поиск" oninput="filterItems()">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <section class="content__section">
+        <div class="container">
+            <div id="itemContainer" class="content">
+                <div data-category="museums" class="content__block">
+                    <img class="content__img" src="./assets/img/эрмитаж 1.png" alt="">
+                    <div class="content__title">Эрмитаж</div>
+                    <div class="content__text">Музей, основанный Екатериной Великой, с богатой коллекцией произведений искусства и древностей.</div>
+                    <div class="content__adres">Адрес: Дворцовая набережная, 34</div>
+                </div>
+                <div data-category="park" class="content__block">
+                    <img class="content__img" src="./assets/img/марсовое-поле.png" alt="">
+                    <div class="content__title">Марсово Поле</div>
+                    <div class="content__text">Партерный парк с могилами и памятниками революционерам, на месте которого раньше находился военный плац.</div>
+                    <div class="content__adres">Адрес: наб. Лебяжьей канавки</div>
+                </div>
+                <div data-category="museums" class="content__block">
+                    <img class="content__img" src="./assets/img/russian-musem 1.png" alt="">
+                    <div class="content__title">Русский музей</div>
+                    <div class="content__text">Музей изобразительных искусств, открытый в 1898 году, с богатой коллекцией русских картин, скульптур и икон.</div>
+                    <div class="content__adres">Адрес: ул. Инженерная, 2-4</div>
+                </div>
+                <div data-category="museums" class="content__block">
+                    <img class="content__img" src="./assets/img/кунскамера.png" alt="">
+                    <div class="content__title">Кунсткамера</div>
+                    <div class="content__text">Музей антропологии и этнографии с археологическими находками из России и других стран мира.</div>
+                    <div class="content__adres">Адрес: Университетская наб., 3</div>
+                </div>
+                <div data-category="cathedrals" class="content__block">
+                    <img class="content__img" src="./assets/img/Петропавловская-крепость.png" alt="">
+                    <div class="content__title">Петропавловская крепость</div>
+                    <div class="content__text">Основанная Петром I крепость с собором и музеем истории Санкт-Петербурга.</div>
+                    <div class="content__adres">Адрес: Петропавловская крепость</div>
+                </div>
+                <div data-category="cathedrals" class="content__block">
+                    <img class="content__img" src="./assets/img/_Исаакиевский-собор.png" alt="">
+                    <div class="content__title"> Исаакиевский собор</div>
+                    <div class="content__text">Православный собор (ныне музей) с позолоченным куполом и роскошным убранством, построенный в 1818 году.</div>
+                    <div class="content__adres"> Адрес: Исаакиевская пл., 4</div>
+                </div>
+                <div data-category="park" class="content__block">
+                    <img class="content__img" src="./assets/img/Летний-сад.png" alt="">
+                    <div class="content__title">Летний сад</div>
+                    <div class="content__text">Парк XVIII века на берегу Невы (впоследствии перестроенный) со скульптурами и высокими деревьями.</div>
+                    <div class="content__adres">Адрес: наб. Кутузова, 2</div>
+                </div>
+                <div data-category="park" class="content__block">
+                    <img class="content__img" src="./assets/img/park-300yers.png" alt="">
+                    <div class="content__title">Парк 300-летия Санкт-Петербурга</div>
+                    <div class="content__text">Благоустроенный прибрежный парк с фонтаном, памятником,  игровой площадкой и многим другим.</div>
+                    <div class="content__adres">Адрес: Приморский пр.</div>
+                </div>
+                <div data-category="cathedrals" class="content__block">
+                    <img class="content__img" src="./assets/img/kasanskiy_cobor.png" alt="">
+                    <div class="content__title">Казанский собор</div>
+                    <div class="content__text">Главный городской собор, в советскую эпоху превращенный в музей.</div>
+                    <div class="content__adres">Адрес: Казанская пл., 2</div>
+                </div>
+                <div data-category="monuments" class="content__block">
+                    <img class="content__img" src="./assets/img/Alexander-Column.png" alt="">
+                    <div class="content__title">Александровская колонна</div>
+                    <div class="content__text">Легендарная колонна, возведенная посреди площади в память о победе российской армии над Наполеоном.</div>
+                    <div class="content__adres">Адрес: пл. Дворцовая, 2</div>
+                </div>
+                <div data-category="monuments" class="content__block">
+                    <img class="content__img" src="./assets/img/The Bronze-Horseman.png" alt="">
+                    <div class="content__title">Медный всадник</div>
+                    <div class="content__text">Монумент, возведенный в 1782 году по заказу Екатерины Великой и названный в честь поэмы Пушкина.</div>
+                    <div class="content__adres">Адрес: Невский проспект</div>
+                </div>
+                <div data-category="monuments" class="content__block">
+                    <img class="content__img" src="./assets/img/Rostral columns.png" alt="">
+                    <div class="content__title">Ростральные колонны</div>
+                    <div class="content__text">В 1810 году на стрелке Васильевского острова возвели две колонны, призванные напоминать о величии флота Российской империи.</div>
+                    <div class="content__adres">Адрес:  Биржевая пл.</div>
+                </div>
+            </div>
+        </div>
+        <div id="pagination" class="pagination__button">
+        </div>
+    </section>
+    <section class="footer">
+        <div class="container">
+            <div class="footer__links">
+                <p class="footer__link"><a class="footer__link" href="http://127.0.0.1:5500/contacts.html">Контакты</a></p>
+                <p><a class="footer__link" href="http://127.0.0.1:5500/index.html">Главная</a> </p>
+            </div>
+        </div>
+    </section>
+
+    <script src="./assets/js/menu.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

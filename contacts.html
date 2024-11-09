@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>contacts</title>
+</head>
+<body id="body">
+    <section class="window"  id="window">
+        <div class="window__main">
+            <button id="close" class="window__cross"><img src="./assets/img/cross.svg" alt="cross"></button>
+            <div class="window__title">
+                связаться с нами
+            </div>
+            <form action="" class="window__inputs">
+                <p><input class="window__input" type="text" placeholder="имя" required></p>
+                <p><input class="window__input" type="email" placeholder="почта" required></p>
+                <!-- <p><input class="window__message" type="text" placeholder="сообщение" required></p> -->
+                <p><textarea class="window__message" name="" id="" required placeholder="сообщение"></textarea></p>
+                <button class="window__close" id="close">
+                    <div class="window__close__text">
+                        отправить 
+                    </div>
+                </button>
+            </form>
+        </div>
+    </section>
+    <section class="header">
+        <div class="container">
+            <div class="header__main">
+                    <a href="http://127.0.0.1:5500/index.html"><img src="./assets/img/пс2.svg" alt="logo"></a>
+                <div class="header__links">
+                    <button class="header__btn" id="menu_icon">
+                        <img class="header__menu" src="./assets/img/icons8-menu 1.svg" alt="menu">
+                    </button>
+                    <a class="header__link" href="http://127.0.0.1:5500/attractions.html">Достопримечательности</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="menu__plank">
+                <p class="menu__link"><a class="menu__links" href="http://127.0.0.1:5500/attractions.html">Достопримечательности</a></p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contacts" >
+        <div class="container">
+            <div class="contacts__main">
+                <div class="contacts__title">
+                    контакты
+                </div>
+                <div class="contacts__button" id="contacts__button">
+                    <button class="contacts__button" type="button"><div class="contacts__text">Связаться с нами</div></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="footer">
+        <div class="container">
+            <div class="footer__links">
+                <p class="footer__link"><a class="footer__link" href="http://127.0.0.1:5500/attractions.html">Главная</a></p>
+                <p><a class="footer__link" href="http://127.0.0.1:5500/attractions.html">Достопримечательности</a> </p>
+            </div>
+        </div>
+    </section>
+    <script src="./assets/js/modal_window.js"></script>
+    <script src="./assets/js/menu.js"></script>
+</body>
+</html>
