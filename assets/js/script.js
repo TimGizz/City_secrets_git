@@ -9,7 +9,7 @@ const buttons = Array.from(document.querySelectorAll('.all__btn__btns'));
 const text = document.querySelector('.filte_search__filter__text')
 
 
-// Восстановление состояния поиска и фильтра из localStorage
+
 const savedSearchInput = localStorage.getItem('searchInput') || '';
 const savedCategory = localStorage.getItem('category') || 'all';
 document.getElementById('searchInput').value = savedSearchInput;
@@ -26,7 +26,7 @@ function applyFilters() {
         item.textContent.toLowerCase().includes(searchInput)
     );
 
-    currentPage = 1; // Сбрасываем на первую страницу
+    currentPage = 1;
     localStorage.setItem('currentPage', currentPage);
     renderItems();
 }
@@ -56,6 +56,7 @@ function renderPagination() {
         button.onclick = () => {
             currentPage = i;
             localStorage.setItem('currentPage', currentPage);
+            
             renderItems();
         };
         pagination.appendChild(button);
@@ -73,7 +74,6 @@ function filterByCategory(category) {
     localStorage.setItem('category', category);
     applyFilters();
 }
-// Инициализация
 
 
 applyFilters();
@@ -96,18 +96,14 @@ window.addEventListener('click', function (event) {
             c=c-1
         }
     }
-    // else{
-    //     win.style.display = 'none';
-    //     strel.classList.toggle('rotate');
-    // }
 });
 
 buttons.forEach(buttons => {
     buttons.addEventListener('click', function () {
-        text.textContent = this.textContent; // Обновляем текст кнопки
+        text.textContent = this.textContent;
         strel.classList.toggle('rotate');
         const textbtn = text.textContent
-        win.style.display = 'none'; // Скрываем выпадающий список
+        win.style.display = 'none';
         localStorage.setItem('text', textbtn);
         c=c-1
     });

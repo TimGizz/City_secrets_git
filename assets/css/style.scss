@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: "Inter", sans-serif;
-    // animation: slideIn 0.6s;
+    //animation: slideIn 0.6s;
 }
 a{
     text-decoration: none;
@@ -14,7 +14,6 @@ body{
     padding: 0px 100px;
     @media (max-width:768px){
         padding: 0px 40px;
-        
     }
     
 }
@@ -33,11 +32,12 @@ body{
     }
     &__link{
         color: #000;
+        font-weight: 600;
         @media (max-width:768px){
             display:none;
         }
         &:hover{
-            color:#f7f7f7c0
+            color:#4a4a4ac0
         }
     }
     &__menu{
@@ -68,6 +68,10 @@ body{
     }
     &__links{
         color: #000;
+        font-weight: 500;
+        &:hover{
+            color:#f7f7f7c0
+        }
     }
 }
 .one{
@@ -92,14 +96,19 @@ body{
         
     }
     &__link{
-        color: #fff;
+        color: #003366;
         font-size: 24px;
+        font-weight: 500;
         background-color: #45B9E8;
         padding: 21px 135px;
         border-radius: 24px;
         @media (max-width:768px){
             font-size: 16px;
             padding: 16px 97px;
+        }
+        &:hover{
+            background-color: #003366;
+            color:#45B9E8
         }
         
         
@@ -177,17 +186,19 @@ body{
         padding: 52px 9px 135px;
         background-color: #fff;
         border-radius: 20px;
-        
+        box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+
     }
     &__text{
         text-align: center;
         margin-top: 68px;
+        font-weight: 500;
     }
     &__blocks{
         display: flex;
         justify-content: center;
         gap: 70px;
-        box-shadow: 0px 4px 10px 0px rgba(34, 60, 80, 0.15);
+        padding-bottom: 15px;
     }
     &__img{
         width: 352px;
@@ -197,12 +208,18 @@ body{
     &__link{
         text-align: center;
         padding-bottom: 77px;
+        margin-top: 0px;
+        margin-top: 123px;
     }
     &__pereiti{
         color: #fff;
         background-color: #003366;
         padding: 30px 113px;
         border-radius:20px;
+        &:hover{
+            background-color: #0359af;
+            color:#f7f7f7c0
+        }
     }
 }
 .slider-container {
@@ -267,7 +284,6 @@ overflow: hidden;
 }
 .wrapper{
     padding-top: 124px;
-    padding-bottom: 123px;
     width: 100%;
     position: relative;
     margin: auto;
@@ -291,8 +307,9 @@ overflow: hidden;
     &__link{
         margin-bottom: 30px;
         color: #000;
+        font-weight: 600;
         &:hover{
-            color:#f7f7f7c0
+            color:#4a4a4ac0
         }
     }
     &__last{
@@ -322,6 +339,10 @@ overflow: hidden;
         background-color: #003366;
         padding: 30px 46px;
         border-radius: 20px;
+        font-weight: 600;
+        &:hover{
+            background-color: #0359af;
+        }
     }
 }
 .window{
@@ -347,7 +368,8 @@ overflow: hidden;
         text-align: center;
         margin-top: 67px;
         margin-bottom: 121px;
-        font-size: 20px;
+        font-size: 50px;
+        font-weight: 500;
     }
     &__close{
         padding: 15px 40px;
@@ -359,6 +381,10 @@ overflow: hidden;
         margin-top: 50px;
         &__text{
             color: #fff;
+        }
+        font-weight: 600;
+        &:hover{
+            background-color: #0359af;
         }
     }
     &__message,
@@ -459,14 +485,9 @@ overflow: hidden;
     }
 }
 .all__btn{
-    padding: 30px 0;
-    padding-left: 40px;
-    background-color: #FFF;
     display: flex;
     flex-direction: column;
-    gap: 25px;
     position: absolute;
-    width: 170px;
     z-index: 10;
     top: 175px;
     display:none;
@@ -475,7 +496,18 @@ overflow: hidden;
         background-color: #fff;
         font-size: 16px;
         cursor: pointer;
+        &:hover{
+            background-color: #E0DEDE;
+        }
+        padding: 15px 0px;
+        padding-left: 40px;
+        width: 170px;
+        padding-right: 88px;
     }
+    
+}
+.osob{
+    padding-right: 35px;
 }
 .content{
     display: flex;
@@ -565,7 +597,9 @@ overflow: hidden;
         border: none;
         border-radius: 13px;
         cursor: pointer;
-
+        &:hover{
+            background-color: #003366;
+        }
     }
     display: flex;
     justify-content: center;
