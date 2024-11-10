@@ -543,7 +543,6 @@ overflow: hidden;
             &__pagin{
                 display: flex;
                 gap: 7px;
-                
             }
         }
     }
@@ -558,6 +557,8 @@ overflow: hidden;
         margin-top: 47px;
     }
     &__adres{
+        color: #000;
+        font-weight: 600;
         position:absolute;
         bottom: 34px;
         left: 0;
@@ -597,15 +598,19 @@ overflow: hidden;
         border: none;
         border-radius: 13px;
         cursor: pointer;
-        &:hover{
-            background-color: #003366;
-        }
+        
     }
     display: flex;
     justify-content: center;
     gap: 10px;
     margin-top: 141px;
-    padding-bottom: 145px;
+    padding-bottom: 45px;
+}
+#number_pagination{
+    text-align: center;
+    font-weight: 600;
+    font-size: 24px;
+    padding-bottom: 80px;
 }
 [type="search"]::-webkit-search-cancel-button {
     -webkit-appearance: none;

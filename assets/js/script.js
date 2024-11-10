@@ -56,8 +56,8 @@ function renderPagination() {
         button.onclick = () => {
             currentPage = i;
             localStorage.setItem('currentPage', currentPage);
-            
             renderItems();
+            pug.innerHTML = currentPage
         };
         pagination.appendChild(button);
     }
@@ -112,6 +112,5 @@ buttons.forEach(buttons => {
 btn.addEventListener('click', ()=>{
     strel.classList.toggle('rotate');
 })
-
-
-
+const pug = document.getElementById('number_pagination')
+pug.innerHTML = currentPage
