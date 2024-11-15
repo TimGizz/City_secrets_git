@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <section class="header">
+        <div class="container">
+            <div class="header__main">
+                    <img src="./assets/img/пс2.svg" alt="logo">
+                <div class="header__links">
+                    <button class="header__btn" id="menu_icon">
+                        <img class="header__menu" src="./assets/img/icons8-menu 1.svg" alt="menu">
+                    </button>
+                    <a class="header__link" href="http://127.0.0.1:5500/attractions.html">Достопримечательности</a>
+                    <a class="header__link" href="http://127.0.0.1:5500/contacts.html">Контакты</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="menu__plank">
+                <p class="menu__link"><a class="menu__links" href="http://127.0.0.1:5500/attractions.html">Достопримечательности</a></p>
+                <p class="menu__link"><a class="menu__links" href="http://127.0.0.1:5500/contacts.html">Контакты</a></p>
+            </div>
+        </div>
+    </section>
+    <img id="img" src='' alt="">
+    <div id="title"></div>
+    <div class="loader">
+        <img id="loader" class="loader" src="./assets/img/loader.svg" alt="">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./assets/js/get_data.js"></script>
+    <script src="./assets/js/menu.js"></script>
+</body>
+</html>

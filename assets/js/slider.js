@@ -1,4 +1,4 @@
-const gap = 0;
+const gap = 60;
 
 const carousel = document.querySelector(".carusel"),
     content = document.getElementById("content"),
@@ -25,4 +25,5 @@ prev.addEventListener("click", (e) => {
 });
 
 let width = carousel.offsetWidth;
+console.log(width + gap)
 window.addEventListener("resize", (e) => (width = carousel.offsetWidth));
