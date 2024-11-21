@@ -10,13 +10,13 @@
     <section class="header">
         <div class="container">
             <div class="header__main">
-                    <img src="./assets/img/пс2.svg" alt="logo">
+                    <a href="https://timgizz.github.io/City-secrets/"><img src="./assets/img/пс2.svg" alt="logo"></a>
                 <div class="header__links">
                     <button class="header__btn" id="menu_icon">
                         <img class="header__menu" src="./assets/img/icons8-menu 1.svg" alt="menu">
                     </button>
-                    <a class="header__link" href="http://127.0.0.1:5500/attractions.html">Достопримечательности</a>
-                    <a class="header__link" href="http://127.0.0.1:5500/contacts.html">Контакты</a>
+                    <a class="header__link" href="https://timgizz.github.io/City-secrets/attractions.html">Достопримечательности</a>
+                    <a class="header__link" href="https://timgizz.github.io/City-secrets/contacts.html">контакты</a>
                 </div>
             </div>
         </div>
@@ -24,16 +24,42 @@
     <section class="menu" id="menu">
         <div class="container">
             <div class="menu__plank">
-                <p class="menu__link"><a class="menu__links" href="http://127.0.0.1:5500/attractions.html">Достопримечательности</a></p>
-                <p class="menu__link"><a class="menu__links" href="http://127.0.0.1:5500/contacts.html">Контакты</a></p>
+                <p class="menu__link"><a class="menu__links" href="https://timgizz.github.io/City-secrets/attractions.html">Достопримечательности</a></p>
+                <p class="menu__link"><a class="menu__links" href="https://timgizz.github.io/City-secrets/contacts.html">Контакты</a></p>
             </div>
         </div>
     </section>
-    <img id="img" src='' alt="">
-    <div id="title"></div>
-    <div class="loader">
-        <img id="loader" class="loader" src="./assets/img/loader.svg" alt="">
-    </div>
+    <section class="description">
+        <div id="loader" class="loader">
+            <img  class="loader" src="./assets/img/loader.svg" alt="">
+        </div>
+        <div class="container">
+            <a class="back" href="https://timgizz.github.io/City-secrets/attractions.html">
+                <img class="back__img" src="./assets/img/strel_left.svg" alt="">
+            </a>
+            <div class="description__title" id="title">
+            </div>
+            <div class="description__imgs">
+            </div>
+            <div class="description__texts">
+            </div>
+            <div class="description__address"></div>
+            <div class="four__map">
+                <iframe id="map" src="https://yandex.ru/map-widget/v1/?um=constructor%3A5bf8ef2e625f5a8a1c4fb1170c5439927d15d47bc75ba0731ffce616898f2b68&amp;source=constructor" width="1280" height="520" frameborder="0"></iframe>
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <div class="container">
+            <div class="footer__logo">
+                <img src="./assets/img/пс2.svg" alt="logo">
+            </div>
+            <div class="footer__links">
+                <p class="footer__link"><a class="footer__link" href="https://timgizz.github.io/City-secrets/contacts.html">Контакты</a></p>
+                <p><a class="footer__link" href="https://timgizz.github.io/City-secrets/attractions.html">Достопримечательности</a> </p>
+            </div>
+        </div>
+    </section>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./assets/js/get_data.js"></script>
     <script src="./assets/js/menu.js"></script>

@@ -2,11 +2,11 @@
 let currentPage = parseInt(localStorage.getItem('currentPage')) || 1;
 const itemsPerPage = 9;
 let filteredItems = [];
-const btn = document.querySelector(".filte_search__filter__btn");
+const btn = document.querySelector(".filter_search__filter__btn");
 const win = document.querySelector(".all__btn");
-const strel = document.querySelector(".filte_search__filter__img") ;
+const strel = document.querySelector(".filter_search__filter__img") ;
 const buttons = Array.from(document.querySelectorAll('.all__btn__btns'));
-const text = document.querySelector('.filte_search__filter__text')
+const text = document.querySelector('.filter_search__filter__text')
 
 
 
@@ -26,12 +26,12 @@ const itemContainer = document.getElementById('itemContainer');
 let dct
 let list_dct = []
 let counts = 0
-// let list_duv = []
 const loader = document.getElementById('loader2')
 loader.style.display = 'flex'
-
-
-
+win.style.display = 'none';
+const pug = document.getElementById('number_pagination')
+// localStorage.removeItem('searchInput')
+// localStorage.removeItem('category')
 
 function applyFilters() {
     axios({
@@ -41,26 +41,21 @@ function applyFilters() {
     .then(function (response) {
         list_dct = []
         dct = response.data
-        // filter()
-        // console.log(response.data)
         filter()
         function filter(){
             counts = 0
-            const category = localStorage.getItem('category');
+            const category = localStorage.getItem('category')||'all';
             for(i=0;i<12;i++){
-                const searchInput = localStorage.getItem('searchInput').toLowerCase();
-                console.log('Kia'.toLowerCase().includes(searchInput))
-                // console.log(searchInput)
-                if ((category === 'all' || dct[i]['category'] === category) && dct[i]['title'].toLowerCase().includes(searchInput)){
+                const searchInput = localStorage.getItem('searchInput')||'';
+                if ((category === 'all' || dct[i]['category'] === category) && 
+                (dct[i]['title'].toLowerCase().includes(searchInput) || 
+                dct[i]['text'].toLowerCase().includes(searchInput) || 
+                dct[i]['address'].toLowerCase().includes(searchInput))){
                     counts = counts + 1
                     list_dct.push(dct[i])
-                    // console.log(i,'f')
-                    // console.log(list_dct)
                 }
-                
             }
             render()
-            // console.log(counts)
         }
         
         function render() {
@@ -82,10 +77,10 @@ function applyFilters() {
                 address.textContent = list_dct[i]['address']
 
                 div.classList = 'content__block'
-                div.id = +list_dct[i]['id'] + 13
+                div.id = +list_dct[i]['id']
                 div.onclick = function(id){
                     console.log(id)
-                    const url = `http://127.0.0.1:5500/attraction_dicription.html?i=${encodeURIComponent(this.id)}`;
+                    const url = `https://timgizz.github.io/City-secrets/attraction_dicription.html?i=${encodeURIComponent(this.id)}`;
                     window.location.href = url
                 }
                 text_block.classList = 'content__text'
@@ -100,22 +95,13 @@ function applyFilters() {
                 div.appendChild(address)
             }
             let list_div = Array.from(document.querySelectorAll('.content__block'))
-            // list_div.push('asd')
             filteredItems = [...list_div];
             loader.style.display = 'none'
             renderItems()
         }
     });
-        
-        
-    // filteredItems = items.filter(item =>
-    //     (category === 'all' || item.getAttribute('data-category') === category) &&
-    //     item.textContent.toLowerCase().includes(searchInput)
-    // );
-    // filterItems = dct
-    // console.log(filterItems)
-    
     currentPage = 1;
+    pug.innerHTML = currentPage
     localStorage.setItem('currentPage', currentPage);
     renderItems();
 }
@@ -169,24 +155,19 @@ function filterByCategory(category) {
 
 applyFilters();
 
-let buton_count=0;
-
 btn.addEventListener("click", (e) =>{
-    if(buton_count==0){
+    if(win.style.display == 'none'){
         win.style.display = 'flex';
-        buton_count=buton_count+1
     }else{
         win.style.display = 'none';
-        buton_count=buton_count-1
     }
 })
 window.addEventListener('click', function (event) {
-    if (buton_count>0){
+    if (win.style.display == 'flex'){
         if (!event.target.matches('#btn')) {
             if(win.style.display != 'none'){
                 win.style.display = 'none';
                 strel.classList.toggle('rotate');
-                buton_count=buton_count-1
             }
         }
     }
@@ -199,12 +180,11 @@ buttons.forEach(buttons => {
         const textbtn = text.textContent
         win.style.display = 'none';
         localStorage.setItem('text', textbtn);
-        buton_count=buton_count-1
     });
 });
 
 btn.addEventListener('click', ()=>{
     strel.classList.toggle('rotate');
 })
-const pug = document.getElementById('number_pagination')
-pug.innerHTML = currentPage
+
+

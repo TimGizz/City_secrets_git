@@ -4,20 +4,21 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./assets/css/style.css">
-        <title>attractions</title>
+        <title>Достопримечательности</title>
     </head>
     <body>
         
-        <!-- <input type="text" class="filte_search__filter__btn" name="" id="searchInput"oninput="filterItems()"> -->
-    <section class="header">
+       <!-- <input type="text" class="filte_search__filter__btn" name="" id="searchInput"oninput="filterItems()"> -->
+    
+       <section class="header">
         <div class="container">
             <div class="header__main">
-                    <a href="http://127.0.0.1:5500/index.html"><img src="./assets/img/пс2.svg" alt="logo"></a>
+                    <a href="https://timgizz.github.io/City-secrets/"><img src="./assets/img/пс2.svg" alt="logo"></a>
                 <div class="header__links">
                     <button class="header__btn" id="menu_icon">
                         <img class="header__menu" src="./assets/img/icons8-menu 1.svg" alt="menu">
                     </button>
-                    <a class="header__link" href="http://127.0.0.1:5500/contacts.html">контакты</a>
+                    <a class="header__link" href="https://timgizz.github.io/City-secrets/contacts.html">контакты</a>
                 </div>
             </div>
         </div>
@@ -27,32 +28,32 @@
         <div class="container">
             <div class="menu__plank">
                 
-                <p class="menu__link"><a  class="menu__links" href="http://127.0.0.1:5500/contacts.html">Контакты</a></p>
+                <p class="menu__link"><a  class="menu__links" href="https://timgizz.github.io/City-secrets/contacts.html">Контакты</a></p>
             </div>
         </div>
     </section>
     
-    <section class="filte_search">
+    <section class="filter_search">
         <div class="container">
-            <div class="filte_search__main">
-                <div class="filte_search__filter">
-                    <button id="btn" class="filte_search__filter__btn">
-                        <div id="btn" class="filte_search__filter__text"> 
+            <div class="filter_search__main">
+                <div class="filter_search__filter">
+                    <button id="btn" class="filter_search__filter__btn">
+                        <div id="btn" class="filter_search__filter__text"> 
                             Без фильтра
                         </div>
-                        <img id="btn" class="filte_search__filter__img" src="./assets/img/down.svg" alt="">
+                        <img id="btn" class="filter_search__filter__img" src="./assets/img/down.svg" alt="">
                     </button>
                     <div class="all__btn">
-                        <p><button onclick="filterByCategory('park')" class="all__btn__btns"><div class="filte_search__filter__texts">парки</div></button></p>
-                        <p><button onclick="filterByCategory('museums')" class="all__btn__btns"><div class="filte_search__filter__texts">музеи</div></button></p>
-                        <p><button onclick="filterByCategory('cathedrals')" class="all__btn__btns"><div class="filte_search__filter__texts">соборы</div></button></p>
-                        <p><button onclick="filterByCategory('monuments')" class="all__btn__btns"><div class="filte_search__filter__texts">памятники</div></button></p>
-                        <p><button onclick="filterByCategory('all')" class="all__btn__btns osob"><div class="filte_search__filter__texts">Без фильтра</div></button></p>
+                        <p><button onclick="filterByCategory('park')" class="all__btn__btns"><div class="filter_search__filter__texts">парки</div></button></p>
+                        <p><button onclick="filterByCategory('museums')" class="all__btn__btns"><div class="filtr_search__filter__texts">музеи</div></button></p>
+                        <p><button onclick="filterByCategory('cathedrals')" class="all__btn__btns"><div class="filter_search__filter__texts">соборы</div></button></p>
+                        <p><button onclick="filterByCategory('monuments')" class="all__btn__btns"><div class="filter_search__filter__texts">памятники</div></button></p>
+                        <p><button onclick="filterByCategory('all')" class="all__btn__btns osob"><div class="filter_search__filter__texts">Без фильтра</div></button></p>
                     </div>
                 </div>
                 <form action="">
-                    <div class="filte_search__search">
-                        <input id="searchInput" class="filte_search__search__input" type="search" placeholder="Поиск" oninput="filterItems()">
+                    <div class="filter_search__search">
+                        <input id="searchInput" class="filter_search__search__input" type="search" placeholder="Поиск" oninput="filterItems()">
                     </div>
                 </form>
             </div>
@@ -139,15 +140,17 @@
                 <img id="loader2" class="loader" src="./assets/img/loader.svg" alt="">
             </div>
         </div>
-        <div id="pagination" class="pagination__button">
-        </div>
+        <div id="pagination" class="pagination__button"></div>
         <div id="number_pagination"></div>
     </section>
     <section class="footer">
         <div class="container">
+            <div class="footer__logo">
+                <img src="./assets/img/пс2.svg" alt="logo">
+            </div>
             <div class="footer__links">
-                <p class="footer__link"><a class="footer__link" href="http://127.0.0.1:5500/contacts.html">Контакты</a></p>
-                <p><a class="footer__link" href="http://127.0.0.1:5500/index.html">Главная</a> </p>
+                <p class="footer__link"><a class="footer__link" href="https://timgizz.github.io/City-secrets/contacts.html">Контакты</a></p>
+                <p><a class="footer__link" href="https://timgizz.github.io/City-secrets/index.html">Главная</a> </p>
             </div>
         </div>
     </section>
