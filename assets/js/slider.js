@@ -7,6 +7,7 @@ const next = document.querySelector(".next");
 const prev = document.querySelector(".prev");
 const block = document.querySelector(".fhree__block");
 const wrapper = document.querySelector('.wrapper')
+let width = block.scrollWidth;
 
 
 let width1 = carousel.scrollWidth
@@ -32,5 +33,3 @@ prev.addEventListener("click", (e) => {
     }
     
 });
-let width = block.scrollWidth;
-// window.addEventListener("resize", (e) => (width = carousel.offsetWidth));

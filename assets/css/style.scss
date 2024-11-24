@@ -2,14 +2,12 @@
     margin: 0;
     padding: 0;
     font-family: "Inter", sans-serif;
-    //animation: slideIn 0.6s;
 }
 a{
     text-decoration: none;
 }
 body{
     overflow-y:scroll;
-    // background-color: #E0DEDE;
 }
 .container{
     padding: 0px 100px;
@@ -350,7 +348,6 @@ overflow: hidden;
             display: block;
             gap: 20px;
             text-align: center;
-
         }
     }
     &__link{
@@ -404,7 +401,9 @@ overflow: hidden;
     &__number,
     &__mail{
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        gap: 50px;
+        
         margin-top: 20px;
         @media (max-width:375px) {
             flex-direction: column;
@@ -415,18 +414,6 @@ overflow: hidden;
         margin: 0 200px;
         @media (max-width:951px) {
             margin: 0 50px;
-        }
-    }
-    &__number_phone,
-    &__poch{
-        font-size: 24px;
-        color: #003366;
-        font-weight: 600;
-        @media (max-width:486px) {
-            font-size: 16px;
-        }
-        @media (max-width:425px) {
-            display: none;
         }
     }
     &__phone,
@@ -778,7 +765,6 @@ overflow: hidden;
         width: auto;
         height: 265px;
         @media (max-width:425px) {
-            // size: auto;
             width: 300px;
             height: auto;
         }
@@ -806,7 +792,6 @@ overflow: hidden;
     }
 }
 .copy{
-    // display: none;
     background-color: #fff;
     padding: 10px 30px;
     position: fixed;
@@ -820,16 +805,16 @@ overflow: hidden;
     transform: translateY(-38.4px);
 }
 .ishes{
-    transition: transform 0ю5s linear;
+    transition: transform 0.5s linear;
     transform: translateY(38.4px);
 } 
 .icon{
     height: 30px;
-    color: #fff !important;
-    display: none;
-    @media (max-width:425px) {
-        display: flex;
-    }
+    fill: #003366;
+}
+.f{
+    display: flex;
+    gap: 10px;
 }
 
  

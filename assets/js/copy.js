@@ -5,6 +5,5 @@ function copy(textContent){
     setTimeout(() => {
         copy_win.classList.add('ishes');
     },2000)
-    console.log(123)
     copy_win.classList.remove('ishes');
 }

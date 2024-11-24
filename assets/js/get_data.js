@@ -1,10 +1,8 @@
 const params = new URLSearchParams(window.location.search);
-const id = params.get('i');
+const id = params.get('id');
 const title = document.getElementById('title')
 const loader = document.getElementById('loader')
 const map = document.getElementById('map')
-// const img = Array.from(document.querySelectorAll('.description__img'))
-// const text = Array.from(document.querySelectorAll('.description__text'))
 const imgs = document.querySelector('.description__imgs')
 const texts = document.querySelector('.description__texts')
 const address = document.querySelector('.description__address')
@@ -20,7 +18,6 @@ axios({
     let dct = response.data
     gt = dct[0]['img']
     title.textContent = dct[0]['title']
-    // text.textContent = dct[0]['description']
     address.textContent = dct[0]['address']
     map.src = dct[0]['script']
     const script = document.createElement('script')

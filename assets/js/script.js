@@ -1,4 +1,3 @@
-// const items = Array.from(document.querySelectorAll('.content__block'));
 let currentPage = parseInt(localStorage.getItem('currentPage')) || 1;
 const itemsPerPage = 9;
 let filteredItems = [];
@@ -23,15 +22,13 @@ let title = document.getElementById('title')
 let tex = document.getElementById('text')
 let address = document.getElementById('address')
 const itemContainer = document.getElementById('itemContainer');
-let dct
-let list_dct = []
+let dict
+let list_dict = []
 let counts = 0
 const loader = document.getElementById('loader2')
 loader.style.display = 'flex'
 win.style.display = 'none';
 const pug = document.getElementById('number_pagination')
-// localStorage.removeItem('searchInput')
-// localStorage.removeItem('category')
 
 function applyFilters() {
     axios({
@@ -39,20 +36,20 @@ function applyFilters() {
         url: 'https://672b1e6c976a834dd025b2ee.mockapi.io/attractions',
     })
     .then(function (response) {
-        list_dct = []
-        dct = response.data
+        list_dict = []
+        dict = response.data
         filter()
         function filter(){
             counts = 0
-            const category = localStorage.getItem('category')||'all';
+            const category = localStorage.getItem('category')||' ';
             for(i=0;i<12;i++){
                 const searchInput = localStorage.getItem('searchInput')||'';
-                if ((category === 'all' || dct[i]['category'] === category) && 
-                (dct[i]['title'].toLowerCase().includes(searchInput) || 
-                dct[i]['text'].toLowerCase().includes(searchInput) || 
-                dct[i]['address'].toLowerCase().includes(searchInput))){
+                if ((category === 'all' || dict[i]['category'] === category) && 
+                (dict[i]['title'].toLowerCase().includes(searchInput) || 
+                dict[i]['text'].toLowerCase().includes(searchInput) || 
+                dict[i]['address'].toLowerCase().includes(searchInput))){
                     counts = counts + 1
-                    list_dct.push(dct[i])
+                    list_dict.push(dict[i])
                 }
             }
             render()
@@ -71,16 +68,16 @@ function applyFilters() {
                 const title = document.createElement('div')
                 const address = document.createElement('a')
 
-                text_block.textContent = list_dct[i]['text']
-                img.src = list_dct[i]['img']
-                title.textContent = list_dct[i]['title']
-                address.textContent = list_dct[i]['address']
+                text_block.textContent = list_dict[i]['text']
+                img.src = list_dict[i]['img']
+                title.textContent = list_dict[i]['title']
+                address.textContent = list_dict[i]['address']
 
                 div.classList = 'content__block'
-                div.id = +list_dct[i]['id']
+                div.id = +list_dict[i]['id']
                 div.onclick = function(id){
                     console.log(id)
-                    const url = `https://timgizz.github.io/City-secrets/attraction_dicription.html?i=${encodeURIComponent(this.id)}`;
+                    const url = `https://timgizz.github.io/City-secrets/attraction_dicription.html?id=${encodeURIComponent(this.id)}`;
                     window.location.href = url
                 }
                 text_block.classList = 'content__text'
