@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    
 </head>
 <body>
     <section class="header">
@@ -49,6 +50,47 @@
             </div>
         </div>
     </section>
+    <section id="window" class="modal">
+        <div class="container">
+            <div id="wrapper" class="modal__main">
+                <div id="carusel" class="modal__carusel">
+                    <div id="content" class="modal__content"></div>
+                </div>
+                <button id="close" class="modal__cross"><img src="./assets/img/cross.svg" alt="cross"></button>
+                <button type="button" id="prev" class="modal__prev">
+                    <img class="modal__button" src="./assets/img/strel_left.svg" alt="strel">
+                </button>
+                <button type="button" id="next" class="modal__next">
+                    <img class="modal__button" src="./assets/img/strel_right.svg" alt="strel">
+                </button>
+            </div>
+        </div>
+    </section>
+    <section class="reviews">
+        <div class="container">
+            <hr>
+            <div style="text-align: center; font-size: 24px; font-weight: 600; padding: 30px;" class="">Оставьте отзыв</div>
+            <form id="reviewForm" action="">
+                <div class="reviews__input">
+                    <input id="name" type="text" placeholder="Имя" required>
+                    <textarea id="review" type="textarea" placeholder="Отзыв"required></textarea>
+                    <select  required name="" id="rating">
+                        <option value=''>Выберите рейтинг</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div style="text-align: center;" class="">
+                    <input  class="reviews__post" type="submit">
+                </div>
+            </form>
+            <div class="reviews__title">Отзывы</div>
+            <div class="reviews__content">Нет отзывов</div>
+        </div>
+    </section>
     <section class="footer">
         <div class="container">
             <div class="footer__logo">
@@ -61,7 +103,56 @@
         </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module">
+        import {Slider} from "./assets/js/slider.js"
+        const close = document.getElementById("close");
+        setTimeout(() => {
+            const win = document.getElementById("window");
+            const open = document.querySelectorAll(".description__img");
+            const next = document.getElementById("next");
+            const prev = document.getElementById("prev");
+            console.log(123);
+            let A =''
+            console.log(open);
+            
+            for(i=0;i<open.length;i++){
+                open[i].addEventListener("click",(e)=>{
+                    A = new Slider({
+                        name:'вапа',
+                        gap: 0,
+                        loop:true,
+                    })
+                    win.style.display = 'block';
+                    document.body.style.overflowY = 'hidden';
+                })
+            }
+            document.addEventListener('keydown', (event)=>{
+                if(event.code == 'Escape'){
+                    win.style.display = 'none';
+                    document.body.style.overflowY = 'scroll';
+                }
+                if(event.code == 'ArrowLeft'){
+                    A.slide_left()
+                }
+                if(event.code == 'ArrowRight'){
+                    A.slide_right()
+                }
+            })
+            close.addEventListener("click",(e)=>{
+                win.style.display = 'none';
+                document.body.style.overflowY = 'scroll';
+            })
+            next.addEventListener("click", (e) => {
+                A.slide_right()
+            });
+            prev.addEventListener("click", (e) => {
+                A.slide_left()
+            });
+        }, 700);
+        
+    </script>
     <script src="./assets/js/get_data.js"></script>
     <script src="./assets/js/menu.js"></script>
+    <script src="./assets/js/reviews.js"></script>
 </body>
 </html>

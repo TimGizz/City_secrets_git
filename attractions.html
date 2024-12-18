@@ -45,12 +45,13 @@
                         <p><button onclick="filterByCategory('museums')" class="all__btn__btns"><div class="filtr_search__filter__texts">музеи</div></button></p>
                         <p><button onclick="filterByCategory('cathedrals')" class="all__btn__btns"><div class="filter_search__filter__texts">соборы</div></button></p>
                         <p><button onclick="filterByCategory('monuments')" class="all__btn__btns"><div class="filter_search__filter__texts">памятники</div></button></p>
-                        <p><button onclick="filterByCategory('all')" class="all__btn__btns osob"><div class="filter_search__filter__texts">Без фильтра</div></button></p>
+                        <p><button onclick="filterByCategory('')" class="all__btn__btns osob"><div class="filter_search__filter__texts">Без фильтра</div></button></p>
                     </div>
+                    <button class="filter_search__sort" onclick="sorting()">По aлфaвиту</button>
                 </div>
                 <form action="">
                     <div class="filter_search__search">
-                        <input id="searchInput" class="filter_search__search__input" type="search" placeholder="Поиск" oninput="filterItems()">
+                        <input  id="searchInput" class="filter_search__search__input" type="search" placeholder="Поиск" oninput="filterItems()">
                     </div>
                 </form>
             </div>
@@ -63,6 +64,9 @@
             <div class="loader2">
                 <img id="loader2" class="loader" src="./assets/img/loader.svg" alt="">
             </div>
+        </div>
+        <div class="pagination__Show_more">
+            <button class="filter_search__sort" onclick="get_more()" class="">Показать больше</button>
         </div>
         <div id="pagination" class="pagination__button"></div>
         <div id="number_pagination"></div>

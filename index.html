@@ -73,46 +73,45 @@
     </section>
     <section class="fhree">
         <div class="container">
-            <div class="wrapper">
-                <div class="carusel">
-                    <div class="fhree__carusel" id="content">
+            <div id="wrapper" class="wrapper">
+                <div id="content" class="carusel">
+                    <div id="carusel" class="fhree__carusel" >
                         <div class="fhree__blocks" >
-                            <div class="fhree__block">
+                            <div id="fhree__block" class="fhree__block">
                                     <img class="fhree__img" src="./assets/img/эрмитаж.png" alt="Эрмитаж">
                                     <div class="fhree__text">Эрмитаж</div>
                             </div>
-                            <div class="fhree__block">
+                            <div id="fhree__block" class="fhree__block">
                                     <img class="fhree__img" src="./assets/img/nevskiy.png" alt="Эрмитаж">
                                     <div class="fhree__text">Невский проспект</div>
                             </div>
-                            <div class="fhree__block">
+                            <div id="fhree__block" class="fhree__block">
                                     <img class="fhree__img"src="./assets/img/russian_musem.png" alt="Эрмитаж">
                                     <div class="fhree__text">Русский музей</div>
                             </div>
-                            <div class="fhree__block">
+                            <div id="fhree__block" class="fhree__block">
                                     <img class="fhree__img" src="./assets/img/kasanskiy_cobor.png" alt="Эрмитаж">
                                     <div class="fhree__text">Казанский собор</div>
                             </div>
-                            <div class="fhree__block">
+                            <div id="fhree__block" class="fhree__block">
                                     <img class="fhree__img" src="./assets/img/kolonna.png" alt="Эрмитаж">
                                     <div class="fhree__text">Александровская колонна</div>
                             </div>
-                            <div class="fhree__block">
+                            <div id="fhree__block" class="fhree__block">
                                     <img class="fhree__img" src="./assets/img/summer_park.png" alt="Эрмитаж">
                                     <div class="fhree__text">Летний сад</div>
                             </div>
-                            <div class="fhree__block">
+                            <div id="fhree__block" class="fhree__block">
                                     <img class="fhree__img" src="./assets/img/krepost.png" alt="Эрмитаж">
                                     <div class="fhree__text">Петропавловская крепость</div>
                             </div>
                          </div>
                     </div>
-                        
                 </div>
-                <button type="button" class="prev">
+                <button type="button" id="prev" class="prev">
                     <img class="fhree__button" src="./assets/img/strel_left.svg" alt="strel">
                 </button>
-                <button type="button" class="next">
+                <button type="button" id="next"class="next">
                     <img class="fhree__button" src="./assets/img/strel_right.svg" alt="strel">
                 </button>
 
@@ -141,7 +140,26 @@
             </div>
         </div>
     </section>
-    
+    <script type="module"> 
+        import {Slider} from './assets/js/slider.js'
+        const next = document.getElementById("next");
+        const prev = document.getElementById("prev");
+        const slider = new Slider({
+            name:'вапа',
+            gap: 0 ,
+            loop:true
+        }); 
+
+        next.addEventListener("click", (e) => {
+            console.log(123);
+            
+            slider.slide_right()
+        });
+        prev.addEventListener("click", (e) => {
+            console.log(123);
+            slider.slide_left()
+        });
+    </script>
     <script src="./assets/js/menu.js"></script>
     <script src="./assets/js/slider.js"></script>
 </body>
