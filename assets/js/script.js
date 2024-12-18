@@ -48,6 +48,9 @@ function sorting(){
 }
 
 async function applyFilters() {
+    console.log(p);
+    console.log(url);
+    
     await axios.get('https://672b1e6c976a834dd025b2ee.mockapi.io/attractions')
     .then((response) =>{
         number_of_pages = response.data.length
@@ -170,6 +173,7 @@ function filterItems() {
 }
 
 function filterByCategory(category) {
+    url = `https://672b1e6c976a834dd025b2ee.mockapi.io/attractions?page=1&limit=${itemsPerPage}`
     localStorage.setItem('category', category);
     applyFilters();
 }

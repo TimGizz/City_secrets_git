@@ -107,46 +107,46 @@
         import {Slider} from "./assets/js/slider.js"
         const close = document.getElementById("close");
         setTimeout(() => {
-            const win = document.getElementById("window");
+            const modal = document.getElementById("window");
             const open = document.querySelectorAll(".description__img");
             const next = document.getElementById("next");
             const prev = document.getElementById("prev");
             console.log(123);
-            let A =''
+            let gallery =''
             console.log(open);
             
             for(i=0;i<open.length;i++){
                 open[i].addEventListener("click",(e)=>{
-                    A = new Slider({
+                    gallery = new Slider({
                         name:'вапа',
                         gap: 0,
                         loop:true,
                     })
-                    win.style.display = 'block';
+                    modal.style.display = 'block';
                     document.body.style.overflowY = 'hidden';
                 })
             }
             document.addEventListener('keydown', (event)=>{
                 if(event.code == 'Escape'){
-                    win.style.display = 'none';
+                    modal.style.display = 'none';
                     document.body.style.overflowY = 'scroll';
                 }
                 if(event.code == 'ArrowLeft'){
-                    A.slide_left()
+                    gallery.slide_left()
                 }
                 if(event.code == 'ArrowRight'){
-                    A.slide_right()
+                    gallery.slide_right()
                 }
             })
             close.addEventListener("click",(e)=>{
-                win.style.display = 'none';
+                modal.style.display = 'none';
                 document.body.style.overflowY = 'scroll';
             })
             next.addEventListener("click", (e) => {
-                A.slide_right()
+                gallery.slide_right()
             });
             prev.addEventListener("click", (e) => {
-                A.slide_left()
+                gallery.slide_left()
             });
         }, 700);
         
